@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec npm run babel-node -- ./bin/www",
+    "start": "nf start --exec npm run babel-node --procfile Procfile",
+    "start:dev": "DEBUG=floworky:* nf start --procfile Procfile.dev",
     "babel-node": "babel-node --presets=es2015",
     "test": "babel-node spec/run.js"
   },
@@ -13,15 +14,17 @@
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
     "express": "~4.13.4",
+    "foreman": "^2.0.0",
     "morgan": "~1.7.0",
     "nodemon": "^1.11.0",
-    "pg": "^6.1.0",
+    "pg": "^4.4.3",
+    "pg-hstore": "^2.3.2",
     "pg-promise": "^5.3.5",
     "pug": "^2.0.0-beta6",
     "sequelize": "^3.27.0",
     "sequelize-cli": "^2.4.0",
-    "serve-favicon": "~2.3.0",
-    "sqlite3": "^3.1.8"
+    "serve-favicon": "~2.3.0"
   }
 }
