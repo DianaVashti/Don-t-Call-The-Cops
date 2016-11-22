@@ -6,4 +6,8 @@ router.get('/', (request, response) => {
   response.json(data)
 })
 
+router.get('/styleguide', (request, response) => {
+  response.render('../')
+})
+
 module.exports = router
