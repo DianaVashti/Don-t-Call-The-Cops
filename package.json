@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec npm run babel-node -- ./bin/www",
-    "start:dev": "node ./server/index.js",
+    "start": "nf start",
+    "start:dev": "DEBUG=floworky:* nf start --procfile Procfile.dev",
+    "webpack": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js webpack-dev-server --progress --colors",
     "babel-node": "babel-node --presets=es2015",
     "test": "babel-node spec/run.js",
-    "webpack": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js webpack-dev-server --progress --colors"
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo",
+    "migrate:undo:all": "sequelize db:migrate:undo:all"
   },
   "dependencies": {
     "babel-cli": "^6.18.0",
