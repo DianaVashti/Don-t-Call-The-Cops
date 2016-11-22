@@ -1,14 +1,14 @@
 'use strict';
 
-var fs        = require('fs');
-var path      = require('path');
-var Sequelize = require('sequelize');
-var basename  = path.basename(module.filename);
-var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + '/../config/config.js')[env];
-var db        = {};
+let fs        = require('fs');
+let path      = require('path');
+let Sequelize = require('sequelize');
+let basename  = path.basename(module.filename);
+let env       = process.env.NODE_ENV || 'development';
+let config    = require(__dirname + '/../config/config.js')[env];
+let db        = {};
 
-var sequelize = new Sequelize( process.env.DATABASE_URL );
+let sequelize = new Sequelize( process.env.DATABASE_URL );
 
 fs
   .readdirSync(__dirname)
