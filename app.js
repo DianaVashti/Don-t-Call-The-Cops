@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const pug = require('pug')
 
+const models = require( './models/index' )
 const routes = require('./routes/index')
 const users = require('./routes/users')
 const resources = require('./routes/resources')
@@ -15,6 +16,7 @@ const app = express()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
+app.set( 'models', models )
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
